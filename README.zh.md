@@ -11,99 +11,109 @@
       <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
     </linearGradient>
-    
-    <!-- Snowflake Animation -->
-    <style>
-      @keyframes fall {
-        0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(250px) rotate(360deg); opacity: 0.3; }
-      }
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
-      }
-      @keyframes glow {
-        0%, 100% { filter: drop-shadow(0 0 3px rgba(255,255,255,0.8)); }
-        50% { filter: drop-shadow(0 0 10px rgba(255,255,255,1)); }
-      }
-      .snowflake {
-        animation: fall linear infinite, twinkle 2s ease-in-out infinite;
-      }
-      .banner-text {
-        transition: all 0.3s ease;
-      }
-      svg:hover .banner-text {
-        animation: glow 1.5s ease-in-out infinite;
-      }
-      svg:hover .snowflake {
-        animation-duration: 3s, 1s !important;
-      }
-    </style>
   </defs>
   
   <!-- Background -->
   <rect width="100%" height="250" fill="url(#winterGradient)"/>
   
-  <!-- Falling Snowflakes -->
-  <text class="snowflake" x="10%" y="-10" font-size="24" fill="white" opacity="0.8" style="animation-duration: 8s; animation-delay: 0s;">❄</text>
-  <text class="snowflake" x="20%" y="-20" font-size="20" fill="white" opacity="0.7" style="animation-duration: 10s; animation-delay: 1s;">❅</text>
-  <text class="snowflake" x="30%" y="-15" font-size="28" fill="white" opacity="0.9" style="animation-duration: 7s; animation-delay: 2s;">❆</text>
-  <text class="snowflake" x="40%" y="-25" font-size="22" fill="white" opacity="0.8" style="animation-duration: 9s; animation-delay: 0.5s;">❄</text>
-  <text class="snowflake" x="50%" y="-10" font-size="26" fill="white" opacity="0.85" style="animation-duration: 8.5s; animation-delay: 1.5s;">❅</text>
-  <text class="snowflake" x="60%" y="-30" font-size="24" fill="white" opacity="0.75" style="animation-duration: 11s; animation-delay: 2.5s;">❆</text>
-  <text class="snowflake" x="70%" y="-20" font-size="20" fill="white" opacity="0.8" style="animation-duration: 9.5s; animation-delay: 0.8s;">❄</text>
-  <text class="snowflake" x="80%" y="-15" font-size="25" fill="white" opacity="0.9" style="animation-duration: 7.5s; animation-delay: 1.8s;">❅</text>
-  <text class="snowflake" x="90%" y="-25" font-size="23" fill="white" opacity="0.7" style="animation-duration: 10.5s; animation-delay: 2.2s;">❆</text>
+  <!-- Falling Snowflakes with SVG Animations -->
+  <text x="10%" y="30" font-size="24" fill="white" opacity="0.8">
+    ❄
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,250" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </text>
   
-  <!-- Additional Snowflakes for Density -->
-  <text class="snowflake" x="15%" y="-35" font-size="18" fill="white" opacity="0.6" style="animation-duration: 12s; animation-delay: 3s;">❄</text>
-  <text class="snowflake" x="35%" y="-40" font-size="21" fill="white" opacity="0.7" style="animation-duration: 8.8s; animation-delay: 1.2s;">❅</text>
-  <text class="snowflake" x="55%" y="-30" font-size="19" fill="white" opacity="0.65" style="animation-duration: 9.2s; animation-delay: 2.8s;">❆</text>
-  <text class="snowflake" x="75%" y="-35" font-size="22" fill="white" opacity="0.8" style="animation-duration: 10.8s; animation-delay: 0.3s;">❄</text>
-  <text class="snowflake" x="95%" y="-20" font-size="20" fill="white" opacity="0.75" style="animation-duration: 11.5s; animation-delay: 1.7s;">❅</text>
+  <text x="20%" y="20" font-size="20" fill="white" opacity="0.7">
+    ❅
+    <animateTransform attributeName="transform" type="translate" values="0,0; -10,250" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="30%" y="40" font-size="28" fill="white" opacity="0.9">
+    ❆
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,250" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1.8s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="40%" y="25" font-size="22" fill="white" opacity="0.8">
+    ❄
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,250" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.2s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="50%" y="35" font-size="26" fill="white" opacity="0.85">
+    ❅
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,250" dur="8.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.85;0.35;0.85" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="60%" y="20" font-size="24" fill="white" opacity="0.75">
+    ❆
+    <animateTransform attributeName="transform" type="translate" values="0,0; 25,250" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0.3;0.75" dur="2.3s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="70%" y="45" font-size="20" fill="white" opacity="0.8">
+    ❄
+    <animateTransform attributeName="transform" type="translate" values="0,0; -15,250" dur="9.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.9s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="80%" y="30" font-size="25" fill="white" opacity="0.9">
+    ❅
+    <animateTransform attributeName="transform" type="translate" values="0,0; 20,250" dur="7.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2.1s" repeatCount="indefinite"/>
+  </text>
+  
+  <text x="90%" y="25" font-size="23" fill="white" opacity="0.7">
+    ❆
+    <animateTransform attributeName="transform" type="translate" values="0,0; -25,250" dur="10.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.4s" repeatCount="indefinite"/>
+  </text>
   
   <!-- Christmas Lights Border -->
-  <circle cx="5%" cy="15" r="5" fill="#ff0000" opacity="0.8">
+  <circle cx="5%" cy="15" r="5" fill="#ff0000">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="15%" cy="15" r="5" fill="#00ff00" opacity="0.8">
+  <circle cx="15%" cy="15" r="5" fill="#00ff00">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="25%" cy="15" r="5" fill="#ffff00" opacity="0.8">
+  <circle cx="25%" cy="15" r="5" fill="#ffff00">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="35%" cy="15" r="5" fill="#0000ff" opacity="0.8">
+  <circle cx="35%" cy="15" r="5" fill="#0000ff">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="45%" cy="15" r="5" fill="#ff0000" opacity="0.8">
+  <circle cx="45%" cy="15" r="5" fill="#ff0000">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="55%" cy="15" r="5" fill="#00ff00" opacity="0.8">
+  <circle cx="55%" cy="15" r="5" fill="#00ff00">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="65%" cy="15" r="5" fill="#ffff00" opacity="0.8">
+  <circle cx="65%" cy="15" r="5" fill="#ffff00">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="75%" cy="15" r="5" fill="#0000ff" opacity="0.8">
+  <circle cx="75%" cy="15" r="5" fill="#0000ff">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="85%" cy="15" r="5" fill="#ff0000" opacity="0.8">
+  <circle cx="85%" cy="15" r="5" fill="#ff0000">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="95%" cy="15" r="5" fill="#00ff00" opacity="0.8">
+  <circle cx="95%" cy="15" r="5" fill="#00ff00">
     <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
   </circle>
   
-  <!-- Main Title -->
-  <text class="banner-text" x="50%" y="100" font-size="48" font-weight="bold" fill="white" text-anchor="middle" 
-        style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));">
+  <!-- Main Title with Glow Effect -->
+  <text x="50%" y="100" font-size="48" font-weight="bold" fill="white" text-anchor="middle" 
+        filter="url(#glow)">
     🎄 Threads 內容收藏家 ❄️
+    <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
   </text>
   
   <!-- Subtitle -->
-  <text class="banner-text" x="50%" y="145" font-size="22" fill="#e0e7ff" text-anchor="middle"
-        style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+  <text x="50%" y="145" font-size="22" fill="#e0e7ff" text-anchor="middle">
     ✨ 您的專屬迪士尼與優獸大都會檔案館 ✨
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="4s" repeatCount="indefinite"/>
   </text>
   
   <!-- Christmas Message -->
@@ -112,9 +122,18 @@
   </text>
   
   <!-- Decorative Bottom Snowflakes -->
-  <text x="30%" y="220" font-size="20" fill="white" opacity="0.5">❄️</text>
-  <text x="50%" y="225" font-size="24" fill="white" opacity="0.6">❄️</text>
-  <text x="70%" y="220" font-size="20" fill="white" opacity="0.5">❄️</text>
+  <text x="30%" y="220" font-size="20" fill="white" opacity="0.5">
+    ❄️
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+  </text>
+  <text x="50%" y="225" font-size="24" fill="white" opacity="0.6">
+    ❄️
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2.5s" repeatCount="indefinite"/>
+  </text>
+  <text x="70%" y="220" font-size="20" fill="white" opacity="0.5">
+    ❄️
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </text>
 </svg>
 
 <table>
